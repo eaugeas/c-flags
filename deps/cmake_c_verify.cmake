@@ -6,4 +6,7 @@ FetchContent_Declare(
 )
 
 FetchContent_MakeAvailable(cmake-c-verify)
-include_directories("${CMAKE_BINARY_DIR}/_deps/cmake-c-verify-src/cmake/")
+list(APPEND
+  CMAKE_MODULE_PATH
+  "${CMAKE_BINARY_DIR}/_deps/cmake-c-verify-src/cmake/")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} PARENT_SCOPE)

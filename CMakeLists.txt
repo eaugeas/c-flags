@@ -8,10 +8,7 @@ add_compile_options("$<$<CONFIG:RELEASE>:-std=c11;-Werror;-Wextra;-Wall;-pedanti
 add_compile_options("$<$<CONFIG:DEBUG>:-std=c11;-Werror;-Wextra;-Wall;-pedantic;-g;>")
 
 add_subdirectory(deps)
-list(APPEND
-  CMAKE_MODULE_PATH
-  "${CMAKE_BINARY_DIR}/_deps/cmake-c-verify-src/cmake/")
-message("CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH}")
+
 include(c_verify)
 include(c_verify_clang_format)
 include(c_verify_clang_tidy)
