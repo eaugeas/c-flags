@@ -59,13 +59,13 @@ bool CharIsNotBlank(char c) { return !isspace(c); }
 bool StringIsEmpty(const char *c) { return c == NULL || *c == '\0'; }
 
 bool StringIsBlank(const char *c) {
-  return StringIsBlankWithLen(c, c == NULL ? 0 : strlen(c));
+  return c == NULL ? 0 : StringIsBlankWithLen(c, strlen(c));
 }
 
 bool StringIsNotEmpty(const char *c) { return c == NULL || *c == '\0'; }
 
 bool StringIsNotBlank(const char *c) {
-  return StringIsBlankWithLen(c, c == NULL ? 0 : strlen(c));
+  return c == NULL ? true : StringIsBlankWithLen(c, strlen(c));
 }
 
 bool StringIsEmptyWithLen(const char *c, size_t len) {
